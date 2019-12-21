@@ -45,7 +45,7 @@ if (strlen($password) > 5 && strlen($password) < 10) {
 echo '<br>';
 $word = 'html css php';
 echo '9. ';
-echo substr($word, 0, 4), ' ', substr($word, 5, 7);
+echo substr($word, 0, 4), ' ', substr($word, 5, 3), ' ', substr($word, 9, 3);
 /////////////////////////////////////////////
 echo '<br>';
 echo '10. ';
@@ -92,7 +92,7 @@ echo '<br>';
 echo '15. ';
 $word = 'gomunkul';
 if (strlen($word) > 5) {
-    echo substr($word, 0, 4), '...';
+    echo substr($word, 0, 5), '...';
 } else {
     echo $word;
 }
@@ -210,8 +210,8 @@ echo trim($str, '/');
 ////////////////////////////////
 echo '<br>';
 echo '35. ';
-$str = 'слова слова слова';
-echo rtrim($str, '/.'), '.';
+$str = 'слова слова слова.';
+echo rtrim($str, '.'), '.';
 ////////////////////////////////
 echo '<br>';
 echo '36. ';
@@ -262,7 +262,7 @@ echo strip_tags('html, <b>php</b>, js');
 ///////////////////////////////////////////////
 echo '<br>';
 echo '44. ';
-$str = '<b><i>forever</i></b>';
+$str = '<b><i><h1>forever</h1></i></b>';
 echo strip_tags($str, ['<b></b><i></i>']);
 ///////////////////////////////////////////////
 echo '<br>';
@@ -278,7 +278,7 @@ echo ord('c'), ' ';
 echo ord(' ');
 ///////////////////////////////////////////////
 echo '<br>';
-echo '47. 97-122';
+echo '47. ', ord('a') . '-' . ord('z');
 ///////////////////////////////////////////////
 echo '<br>';
 echo '48. ';
@@ -291,6 +291,11 @@ echo $str = chr(mt_rand(65, 90));
 ///////////////////////////////////////////////
 echo '<br>';
 echo '50. ';
+$len = 6;
+for ($i = 1; $i <= $len; $i++) {
+    $str .= chr(mt_rand(97,122));
+}
+echo $str;
 ///////////////////////////////////////
 echo '<br>';
 echo '51. ';
@@ -329,4 +334,11 @@ $str = implode('', $str);
 echo $str;
 //////////////////////////////////
 echo '<br>';
-echo '56. ';
+echo '56. <br> ';
+$arr =[154,220,1351,123,563,333,33,3];
+foreach ($arr as $key => $value) {
+    if (stristr($value, '3' )) {
+        echo $value . '<br>';
+
+    }
+}
