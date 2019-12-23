@@ -11,7 +11,7 @@ echo $arr[count($arr) - 1];
 echo '<br>';
 echo '3. ';
 $arr = ['a', 'b', 'c', 'd', 'e', 1, 2, 3];
-var_dump(in_array(3, $arr));
+echo (in_array(3, $arr));
 ///////////////////////
 echo '<br>';
 echo '4. ';
@@ -40,7 +40,6 @@ $arr = range('a', 'z');
 ////////////////////////////////
 echo '<br>';
 echo '9. ';
-$arr = range(1, 100);
 $arr = range('1', '9',);
 echo implode('-', $arr);
 ////////////////////////////////
@@ -138,5 +137,31 @@ array_splice($arr, array_search('-', $arr), 1);
 echo '<br>';
 echo '24. ';
 $arr = ['a', 'b', 'c', 'd', 'e'];
-array_replace($arr, [0 => '!', 3 => '!!']);
-
+$arr = array_replace($arr, [0 => '!', 3 => '!!']);
+//var_dump($arr);
+////////////////////////////////////
+echo '<br>';
+echo '25. ';
+$arr = ['3'=>'a', '1'=>'c', '2'=>'e', '4'=>'b'];
+sort($arr);
+//var_dump($arr);
+////////////////////////////////////
+echo '<br>';
+echo '26. ';
+$arr = [
+    'a' => 1,
+    'b' => 2,
+    'c' => 3,
+];
+$key = array_rand($arr);
+echo $key;
+///////////////////////////////
+echo '<br>';
+echo '27. ';
+$arr = [
+    'a' => 1,
+    'b' => 2,
+    'c' => 3,
+];
+$key = array_rand($arr);
+echo ($arr[$key]);
