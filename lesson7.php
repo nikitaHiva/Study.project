@@ -11,7 +11,7 @@ echo $arr[count($arr) - 1];
 echo '<br>';
 echo '3. ';
 $arr = ['a', 'b', 'c', 'd', 'e', 1, 2, 3];
-echo (in_array(3, $arr));
+echo(in_array(3, $arr));
 ///////////////////////
 echo '<br>';
 echo '4. ';
@@ -40,7 +40,7 @@ $arr = range('a', 'z');
 ////////////////////////////////
 echo '<br>';
 echo '9. ';
-$arr = range('1', '9',);
+$arr = range(1, 9,);
 echo implode('-', $arr);
 ////////////////////////////////
 echo '<br>';
@@ -73,8 +73,8 @@ array_splice($arr, 1, 2);
 echo '<br>';
 echo '15. ';
 $arr = [1, 2, 3, 4, 5];
-array_splice($arr, 5, 0, [2, 3, 4]);
-//var_dump($arr);
+$result = array_splice($arr, 1, 3, );
+var_dump($result);
 ///////////////////////////////
 echo '<br>';
 echo '16. ';
@@ -142,7 +142,7 @@ $arr = array_replace($arr, [0 => '!', 3 => '!!']);
 ////////////////////////////////////
 echo '<br>';
 echo '25. ';
-$arr = ['3'=>'a', '1'=>'c', '2'=>'e', '4'=>'b'];
+$arr = ['3' => 'a', '1' => 'c', '2' => 'e', '4' => 'b'];
 sort($arr);
 //var_dump($arr);
 ////////////////////////////////////
@@ -164,4 +164,136 @@ $arr = [
     'c' => 3,
 ];
 $key = array_rand($arr);
-echo ($arr[$key]);
+echo($arr[$key]);
+////////////////////////////////////
+echo '<br>';
+echo '28. ';
+$arr = ['a', 'b', 'c', 'd', 'e', 1, 2, 3];
+shuffle($arr);
+//var_dump($arr);
+////////////////////////////////////
+echo '<br>';
+echo '29. ';
+$arr = range(1, 25);
+shuffle($arr);
+//var_dump($arr);
+////////////////////////////////////
+echo '<br>';
+echo '30. ';
+$arr = range('a', 'z');
+shuffle($arr);
+//var_dump($arr);
+/////////////////////////////////////////
+echo '<br>';
+echo '31. ';
+$arr = range('a', 'z');
+shuffle($arr);
+echo implode(array_splice($arr, 0, 6));
+/////////////////////////////////////////
+echo '<br>';
+echo '32. ';
+$arr = ['a', 'b', 'c', 'b', 'a'];
+$arr = array_unique($arr);
+//var_dump($arr);
+/////////////////////////////////////////
+echo '<br>';
+echo '33. ';
+$arr = [1, 2, 3, 4, 5];
+echo array_shift($arr), ' ', array_pop($arr);
+//var_dump($arr);
+/////////////////////////////////////////
+echo '<br>';
+echo '34. ';
+$arr = [1, 2, 3, 4, 5];
+array_unshift($arr, 0);
+array_push($arr, 6);
+//var_dump($arr);
+/////////////////////////////////////////
+echo '<br>';
+echo '35. ';
+$arr = [1, 2, 3, 4, 5, 6, 7, 8];
+foreach ($arr as $key => $value) {
+    echo array_shift($arr);
+    echo array_pop($arr);
+}
+/////////////////////////////////////////
+echo '<br>';
+echo '36. ';
+$arr = ['a', 'b', 'c'];
+$arr = array_pad($arr, 6, '-');
+//var_dump($arr);
+///////////////////////////////////////////////
+echo '<br>';
+echo '37. ';
+$arr = [];
+$arr = array_pad($arr, 10, 'x');
+//var_dump($arr);
+///////////////////////////////////////////////
+echo '<br>';
+echo '38. ';
+$arr = range(1,20);
+//var_dump(array_chunk($arr,4));
+///////////////////////////////////////////////
+echo '<br>';
+echo '39. ';
+$arr = ['a', 'b', 'c', 'b', 'a'];
+$arr = array_count_values($arr);
+//var_dump($arr);
+///////////////////////////////////////////////
+echo '<br>';
+echo '40. ';
+$arr = [1, 2, 3, 4, 5];
+$result = array_map('sqrt', $arr);
+//var_dump($result);
+///////////////////////////////////////////////
+echo '<br>';
+echo '41. ';
+$arr = ['<b>php</b>', '<i>html</i>'];
+$result = array_map('strip_tags', $arr);
+//var_dump($result);
+///////////////////////////////////////////////
+echo '<br>';
+echo '42. ';
+$arr = [' a ', ' b ', ' c '];
+$result = array_map('trim', $arr);
+//var_dump($result);
+///////////////////////////////////////////////
+echo '<br>';
+echo '43. ';
+$arr = [1, 2, 3, 4, 5];
+$arr1 = [3, 4, 5, 6, 7];
+$result = array_intersect($arr,$arr1);
+var_dump($result);
+///////////////////////////////////////////////
+echo '<br>';
+echo '44. ';
+$arr = [1, 2, 3, 4, 5];
+$arr1 = [3, 4, 5, 6, 7];
+$result = array_diff($arr,$arr1);
+///////////////////////////////////////////////
+echo '<br>';
+echo '45. ';
+$string = '1234567890';
+$arr = str_split($string);
+echo array_sum($arr);
+///////////////////////////////////////////////
+echo '<br>';
+echo '46. ';
+$value = range(1, 26);
+$key = range('a', 'z');
+$arr = array_combine($key, $value);
+var_dump($arr);
+///////////////////////////////////////////////
+echo '<br>';
+echo '47. ';
+$arr = range(1, 9);
+var_dump(array_chunk($arr,3));
+///////////////////////////////////////////////
+echo '<br>';
+echo '48. ';
+$arr = [1, 2, 4, 5, 5];
+$arr = array_unique($arr);
+sort($arr);
+array_pop($arr);
+echo $arr[count($arr) - 1];
+
