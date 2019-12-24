@@ -13,9 +13,9 @@
 //    }
 //////////////////////////////////
 if (!empty($_REQUEST['name']) && !empty($_REQUEST['old']) && !empty($_REQUEST['massage']) ) {
-    $name = $_REQUEST['name'];
-    $old = $_REQUEST['old'];
-    $massage = $_REQUEST['massage'];
+    $name = strip_tags($_REQUEST['name']);
+    $old = strip_tags($_REQUEST['old']);
+    $massage = strip_tags($_REQUEST['massage']);
     echo 'Привет, ', $name, ' ', $old, ' Лет', '<br>';
     echo $massage;
 } else {
